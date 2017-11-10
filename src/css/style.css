@@ -4,7 +4,7 @@ html {
 
 body {
 	width: 100%;
-	min-width: 1900px;
+	min-width: 1300px;
 	font-smooth: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -68,7 +68,7 @@ table td {
 }
 
 .text-gray {
-	color: #777 !important;
+	/* color: #777 !important; */
 }
 
 .text-orange {
@@ -472,4 +472,8 @@ svg .y.axis .tick:first-child text {
 
 .table>thead>tr>th {    
     border-bottom: 2px solid #201B3B;
+}
+
+.table-striped>tbody>tr:nth-child(odd) {
+	background-color: transparent !important;
 }
