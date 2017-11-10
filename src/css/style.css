@@ -8,6 +8,7 @@ body {
 	font-smooth: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: #0e0b20;
 }
 
 table td {
@@ -77,11 +78,12 @@ table td {
 .container-fluid {
 	padding-left: 30px;
 	padding-right: 30px;
+	margin-top: 15px;
 }
 
 .stat-holder {
-	background: #090909;
-	border: 1px solid rgba(255,255,255,0.05);
+	background: #0e0b20;
+	border: 1px solid #201B3B;;
 }
 
 .big-info {
@@ -111,7 +113,7 @@ div.small-title-miner {
 	line-height: 20px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	color: #aaa;
+	color: #fff;
 }
 
 span.small-title span.small {
@@ -119,7 +121,7 @@ span.small-title span.small {
 	font-weight: 600;
 	line-height: 16px;
 	letter-spacing: 0px;
-	color: #666;
+	color: #7A7789;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-moz-osx-font-smoothing: auto;
 }
@@ -255,7 +257,7 @@ table i {
 
 table th,
 table td {
-	border-color: #222 !important;
+	border-color: #201B3B !important;
 }
 
 table td {
@@ -263,7 +265,7 @@ table td {
 }
 
 table th {
-	color: #888;
+	color: #7A7789;
 }
 
 table th i {
@@ -292,8 +294,8 @@ nodepropagchart {
 
 .th-nodecheck,
 .td-nodecheck {
-	width: 38px;
-	text-align: center;
+	/* width: 38px;
+	text-align: center; */
 }
 
 .td-nodecheck i {
@@ -301,32 +303,32 @@ nodepropagchart {
 }
 
 .th-nodename {
-	width: 300px;
+	/* width: 300px; */
 	text-overflow: ellipsis;
 }
 
 .th-nodetype {
-	width: 220px;
+	/* width: 220px; */
 }
 
 .th-latency {
-	width: 100px;
+	/* width: 100px; */
 }
 
 .th-blockhash {
-	width: 150px;
+	/* width: 150px; */
 }
 
 .th-blocktime {
-	width: 110px;
+	/* width: 110px; */
 }
 
 .th-peerPropagationTime {
-	width: 120px;
+	/* width: 120px; */
 }
 
 .th-peerPropagationChart {
-	width: 140px;
+	/* width: 140px; */
 }
 
 .nodeInfo .tooltip .tooltip-inner {
@@ -466,4 +468,8 @@ svg .axis text {
 
 svg .y.axis .tick:first-child text {
 	opacity: 0;
+}
+
+.table>thead>tr>th {    
+    border-bottom: 2px solid #201B3B;
 }
