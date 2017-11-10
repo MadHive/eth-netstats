@@ -12,15 +12,15 @@ block content
             span.small-title best block
             span.big-details {{'#'}}{{ bestBlock | number}}
           div.clearfix
-      div.col-xs-3.stat-holder
-        div.big-info.uncleCount.text-info
-          div.pull-left.icon-full-width
-            i.icon-uncle
-          div.big-details-holder
-            span.small-title uncles&nbsp;
-              span.small (current / last 50)
-            span.big-details {{ bestStats.block.uncles.length }}/{{ uncleCount }}
-          div.clearfix
+      //- div.col-xs-3.stat-holder
+      //-   div.big-info.uncleCount.text-info
+      //-     div.pull-left.icon-full-width
+      //-       i.icon-uncle
+      //-     div.big-details-holder
+      //-       span.small-title uncles&nbsp;
+      //-         span.small (current / last 50)
+      //-       span.big-details {{ bestStats.block.uncles.length }}/{{ uncleCount }}
+      //-     div.clearfix
       div.col-xs-3.stat-holder
         div.big-info.blocktime(class="{{ lastBlock | timeClass : true }}")
           div.pull-left.icon-full-width
@@ -99,12 +99,12 @@ block content
                   //- span.small-value {{ avgBlockTime | avgTimeFilter }}
                   sparkchart.big-details.spark-blocktimes(data="{{lastBlocksTime.join(',')}}", tooltipsuffix="s")
 
-              div.col-xs-3.stat-holder
-                div.big-info.chart.text-info
-                  //- i.icon-difficulty
-                  span.small-title difficulty
-                  //- span.small-value {{ lastDifficulty | number }}
-                  sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
+              //- div.col-xs-3.stat-holder
+              //-   div.big-info.chart.text-info
+              //-     i.icon-difficulty
+              //-     span.small-title difficulty
+              //-     span.small-value {{ lastDifficulty | number }}
+              //-     sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
 
               div.col-xs-3.stat-holder.xpull-right
                 div.big-info.chart.xdouble-chart(class="{{ blockPropagationAvg | propagationAvgTimeClass : true }}")
@@ -143,12 +143,12 @@ block content
                   span.small-title gas spending
                   sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
 
-              div.col-xs-3.stat-holder
-                div.big-info.chart.text-info
-                  //- i.icon-difficulty
-                  span.small-title gas limit
-                  //- span.small-value {{ lastDifficulty | number }}
-                  sparkchart.big-details.spark-difficulty(data="{{lastGasLimit.join(',')}}")
+              //- div.col-xs-3.stat-holder
+              //-   div.big-info.chart.text-info
+              //-     i.icon-difficulty
+              //-     span.small-title gas limit
+              //-     span.small-value {{ lastDifficulty | number }}
+              //-     sparkchart.big-details.spark-difficulty(data="{{lastGasLimit.join(',')}}")
 
 
 
@@ -178,8 +178,8 @@ block content
       table.table.table-striped
         thead
           tr.text-info
-            th.th-nodecheck
-              i.icon-check-o(data-toggle="tooltip", data-placement="top", title="Pin nodes to display first", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
+            //- th.th-nodecheck
+            //-   i.icon-check-o(data-toggle="tooltip", data-placement="top", title="Pin nodes to display first", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
             th.th-nodename
               i.icon-node(data-toggle="tooltip", data-placement="top", title="Node name", ng-click="orderTable(['info.name'], false)")
             th.th-nodetype
@@ -212,11 +212,11 @@ block content
               i.icon-bulb(data-toggle="tooltip", data-placement="top", title="Up-time", ng-click="orderTable(['-stats.uptime'], false)")
         tbody(ng-cloak)
           tr(ng-repeat='node in nodes | orderBy:predicate track by node.id', class="{{ node.stats | mainClass : bestBlock }}", id="node_{{node.id}}")
-            td.td-nodecheck
-              i(ng-click="pinNode(node.id)", class="{{ node.pinned | nodePinClass }}", data-toggle="tooltip", data-placement="right", data-original-title="Click to {{ node.pinned ? 'un' : '' }}pin")
+            //- td.td-nodecheck
+            //-   i(ng-click="pinNode(node.id)", class="{{ node.pinned | nodePinClass }}", data-toggle="tooltip", data-placement="right", data-original-title="Click to {{ node.pinned ? 'un' : '' }}pin")
             td.nodeInfo(rel="{{node.id}}")
               span.small(data-toggle="tooltip", data-placement="top", data-html="true", data-original-title="{{node | geoTooltip}}") {{node.info.name}}
-              //- span.small &nbsp;({{node.info.ip}})
+              span.small &nbsp;({{node.info.ip}})
               a.small(href="https://github.com/ethereum/wiki/wiki/Network-Status#updating", target="_blank", data-toggle="tooltip", data-placement="top", data-html="true", data-original-title="Netstats client needs update.<br>Click this icon for instructions.", class="{{ node.info | nodeClientClass : currentApiVersion }}")
                 i.icon-warning-o
             td
@@ -225,16 +225,16 @@ block content
             //-   span.small {{ node.readable.latency }}
             //- td(class="{{ node.stats.mining | hashrateClass : node.stats.active }}", ng-bind-html="node.stats.hashrate | hashrateFilter : node.stats.mining")
             //- td(class="{{ node.stats.peers | peerClass : node.stats.active }}", style="padding-left: 11px;") {{node.stats.peers}}
-            td(style="padding-left: 15px;") {{node.stats.pending}}
-            td(class="{{ node.stats | blockClass : bestBlock }}")
-              span(class="{{ node.readable.forkMessage ? node.readable.forkClass : '' }}") {{'#'}}{{ node.stats.block.number | number }}
+            //- td(style="padding-left: 15px;") {{node.stats.pending}}
+            //- td(class="{{ node.stats | blockClass : bestBlock }}")
+              //- span(class="{{ node.readable.forkMessage ? node.readable.forkClass : '' }}") {{'#'}}{{ node.stats.block.number | number }}
               //- a.small(data-toggle="tooltip", data-placement="top", data-html="true", data-original-title="{{ node.readable.forkMessage }}", class="{{ node.readable.forkClass }}")
                 i.icon-warning-o
-            td(class="{{ node.stats | blockClass : bestBlock }}")
-              span.small {{node.stats.block.hash | hashFilter}}
-            td(class="{{ node.stats | blockClass : bestBlock }}")
-              span.small {{node.stats.block.totalDifficulty | number}}
-            td(style="padding-left: 14px;") {{node.stats.block.transactions.length || 0}}
+            //- td(class="{{ node.stats | blockClass : bestBlock }}")
+            //-   span.small {{node.stats.block.hash | hashFilter}}
+            //- td(class="{{ node.stats | blockClass : bestBlock }}")
+            //-   span.small {{node.stats.block.totalDifficulty | number}}
+            //- td(style="padding-left: 14px;") {{node.stats.block.transactions.length || 0}}
             td(style="padding-left: 14px;") {{node.stats.block.uncles.length || 0}}
             td(class="{{ node.stats.block.received | timeClass : node.stats.active }}") {{node.stats.block.received | blockTimeFilter }}
             td(class="{{ node.stats | propagationTimeClass : bestBlock }}")
