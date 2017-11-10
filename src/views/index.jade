@@ -126,14 +126,6 @@ block content
               div.col-xs-4.stat-holder
                 div.big-info.chart.text-info
                   //- i.icon-uncle
-                  span.small-title uncle count&nbsp;
-                    span.small (25 blocks per bar)
-                  //- span.small-value {{ bestStats.block.uncles.length }}/{{ uncleCount }}
-                  sparkchart.big-details.spark-uncles(data="{{uncleCountChart.join(',')}}")
-
-              div.col-xs-4.stat-holder
-                div.big-info.chart.text-info
-                  //- i.icon-uncle
                   span.small-title transactions
                   sparkchart.big-details.spark-transactions(data="{{transactionDensity.join(',')}}")
 
@@ -142,6 +134,14 @@ block content
                   //- i.icon-gasprice
                   span.small-title gas spending
                   sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
+
+              div.col-xs-4.stat-holder
+                div.big-info.chart.text-info
+                  //- i.icon-uncle
+                  span.small-title uncle count&nbsp;
+                    span.small (25 blocks per bar)
+                  //- span.small-value {{ bestStats.block.uncles.length }}/{{ uncleCount }}
+                  sparkchart.big-details.spark-uncles(data="{{uncleCountChart.join(',')}}")
 
               //- div.col-xs-3.stat-holder
               //-   div.big-info.chart.text-info
