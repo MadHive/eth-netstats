@@ -477,3 +477,37 @@ svg .y.axis .tick:first-child text {
 .table-striped>tbody>tr:nth-child(odd) {
 	background-color: transparent !important;
 }
+
+.gradient-line {
+    height: 1px;
+    background-image: linear-gradient(to right, var(#B433B5) 0%, #FFC638 100%);
+    margin: 10px 0 20px 0;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 0;
+    color: var(--main-color);
+    letter-spacing: 3px;
+	display: inline;
+	font-family: 'Mark', Helvetica;
+}
+
+@font-face {font-weight: normal; font-style: normal;
+	font-family: 'Mark';
+	src: url('ff-mark-light.eot');
+	src: url('ff-mark-light.eot?#iefix') format('embedded-opentype'),
+		 url('ff-mark-light.woff') format('woff'),
+		 url('ff-mark-light.ttf') format('truetype'),
+		 url('ff-mark-light.svg#ff-mark-light') format('svg');
+  }
+  
+  @font-face {font-weight: bold; font-style: normal;
+	font-family: 'Mark';
+	src: url('ff-mark-medium.eot');
+	src: url('ff-mark-medium.eot?#iefix') format('embedded-opentype'),
+		 url('ff-mark-medium.woff') format('woff'),
+		 url('ff-mark-medium.ttf') format('truetype'),
+		 url('ff-mark-medium.svg#ff-mark-medium') format('svg');
+  }
