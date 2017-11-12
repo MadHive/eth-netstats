@@ -9,6 +9,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: #0e0b20;
+	padding: 0 6px 6px 6px;
 }
 
 table td {
@@ -481,33 +482,35 @@ svg .y.axis .tick:first-child text {
 .gradient-line {
     height: 1px;
     background-image: linear-gradient(to right, var(#B433B5) 0%, #FFC638 100%);
-    margin: 10px 0 20px 0;
+    margin: 4px 15px 20px 15px;
 }
 
 h3 {
     font-size: 28px;
     font-weight: bold;
-    margin-top: 0;
-    color: var(--main-color);
+	margin-top: 33px;
+    color: #B433B5;
     letter-spacing: 3px;
-	display: inline;
+	display: block;
 	font-family: 'Mark', Helvetica;
+	padding: 0px 13px;
+	margin-bottom: 23px;
 }
 
 @font-face {font-weight: normal; font-style: normal;
 	font-family: 'Mark';
-	src: url('ff-mark-light.eot');
-	src: url('ff-mark-light.eot?#iefix') format('embedded-opentype'),
-		 url('ff-mark-light.woff') format('woff'),
-		 url('ff-mark-light.ttf') format('truetype'),
-		 url('ff-mark-light.svg#ff-mark-light') format('svg');
+	src: url('../fonts/ff-mark-light.eot');
+	src: url('../fonts/ff-mark-light.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/ff-mark-light.woff') format('woff'),
+		 url('../fonts/ff-mark-light.ttf') format('truetype'),
+		 url('../fonts/ff-mark-light.svg#ff-mark-light') format('svg');
   }
   
   @font-face {font-weight: bold; font-style: normal;
 	font-family: 'Mark';
-	src: url('ff-mark-medium.eot');
-	src: url('ff-mark-medium.eot?#iefix') format('embedded-opentype'),
-		 url('ff-mark-medium.woff') format('woff'),
-		 url('ff-mark-medium.ttf') format('truetype'),
-		 url('ff-mark-medium.svg#ff-mark-medium') format('svg');
+	src: url('../fonts/ff-mark-medium.eot');
+	src: url('../fonts/ff-mark-medium.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/ff-mark-medium.woff') format('woff'),
+		 url('../fonts/ff-mark-medium.ttf') format('truetype'),
+		 url('../fonts/ff-mark-medium.svg#ff-mark-medium') format('svg');
   }
