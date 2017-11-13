@@ -481,20 +481,20 @@ svg .y.axis .tick:first-child text {
 
 .gradient-line {
     height: 1px;
-    background-image: linear-gradient(to right, var(#B433B5) 0%, #FFC638 100%);
+    background-image: linear-gradient(to right, #B433B5 0%, #FFC638 100%);
     margin: 4px 15px 20px 15px;
 }
 
 h3 {
     font-size: 28px;
     font-weight: bold;
-	margin-top: 33px;
+	margin-top: 30px;
     color: #B433B5;
     letter-spacing: 3px;
 	display: block;
 	font-family: 'Mark', Helvetica;
 	padding: 0px 13px;
-	margin-bottom: 23px;
+	margin-bottom: 25px;
 }
 
 @font-face {font-weight: normal; font-style: normal;
