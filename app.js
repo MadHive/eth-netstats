@@ -78,13 +78,12 @@ app.use(function(err, req, res, next) {
 	});
 });
 
-server = http.createServer(app);
+let server = http.createServer(app);
 
 // Init socket vars
 var Primus = require('primus');
 var api;
 var client;
-var server;
 
 
 // Init API Socket connection
