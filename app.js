@@ -52,7 +52,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/health', function(req, res) {
-  res.send(Date.now() - lastBlock);
+  console.log(lastBlock);
+  let lastBlockDiff = Date.now() - lastBlock;
+  return res.send(lastBlockDiff);
 });
 
 // catch 404 and forward to error handler
