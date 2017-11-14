@@ -450,8 +450,8 @@ var nodeCleanupTimeout = setInterval( function ()
 
 }, 1000*60*60);
 
-server.listen(process.env.PORT || 3000);
+server.listen(3300);
 
-console.log('STARTED ON ' + (process.env.PORT || 3000));
+console.log('STARTED ON PORT 3300');
 
 module.exports = server;
