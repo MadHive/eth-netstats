@@ -41,11 +41,11 @@ var banned = require('./lib/utils/config').banned;
 
 //var app = require('./lib/express');
 // view engine setup
-app.set('views', path.join(__dirname, './src/views'));
+app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, './dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/', function(req, res) {
   res.render('index');
@@ -451,5 +451,7 @@ var nodeCleanupTimeout = setInterval( function ()
 }, 1000*60*60);
 
 server.listen(process.env.PORT || 3000);
+
+console.log('STARTED ON ' + (process.env.PORT || 3000));
 
 module.exports = server;
