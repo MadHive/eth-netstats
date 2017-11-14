@@ -54,7 +54,7 @@ app.get('/', function(req, res) {
 app.get('/health', function(req, res) {
   console.log(lastBlock);
   let lastBlockDiff = Date.now() - lastBlock;
-  return res.send(lastBlockDiff);
+  res.send(lastBlockDiff.toString());
 });
 
 // catch 404 and forward to error handler
