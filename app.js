@@ -3,8 +3,14 @@ var logger = require('./lib/utils/logger');
 var chalk = require('chalk');
 var http = require('http');
 
+var express = require('express');
+var app = express();
+var path = require('path');
+var bodyParser = require('body-parser');
+
 // Init WS SECRET
-var WS_SECRET;
+let WS_SECRET = 55;
+let lastBlock = Date.now();
 
 if( !_.isUndefined(process.env.WS_SECRET) && !_.isNull(process.env.WS_SECRET) )
 {
@@ -31,14 +37,48 @@ else
 
 var banned = require('./lib/utils/config').banned;
 
-// Init http server
-if( process.env.NODE_ENV !== 'production' )
-{
-	var app = require('./lib/express');
-	server = http.createServer(app);
-}
-else
-	server = http.createServer();
+//var app = require('./lib/express');
+// view engine setup
+app.set('views', path.join(__dirname, './src/views'));
+app.set('view engine', 'jade');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, './dist')));
+
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
+app.get('/health', function(req, res) {
+  res.send(Date.now() - lastBlock);
+});
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+	var err = new Error('Not Found');
+	err.status = 404;
+	next(err);
+});
+
+// error handlers
+app.use(function(err, req, res, next) {
+	res.status(err.status || 500);
+	res.render('error', {
+		message: err.message,
+		error: err
+	});
+});
+
+// production error handler
+app.use(function(err, req, res, next) {
+	res.status(err.status || 500);
+	res.render('error', {
+		message: err.message,
+		error: {}
+	});
+});
+
+server = http.createServer(app);
 
 // Init socket vars
 var Primus = require('primus');
@@ -197,6 +237,7 @@ api.on('connection', function (spark)
 						});
 
 						console.success('API', 'BLK', 'Block:', data.block['number'], 'from:', data.id);
+            lastBlock = Date.now();
 
 						Nodes.getCharts();
 					}
