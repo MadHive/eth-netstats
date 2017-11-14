@@ -521,4 +521,8 @@ h3 {
 		width: 320px; 
 		overflow: scroll;
 	}
+
+	body {
+		min-width: auto;
+	}	
 }	
