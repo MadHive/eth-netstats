@@ -12,6 +12,8 @@ var bodyParser = require('body-parser');
 let WS_SECRET = 55;
 let lastBlock = Date.now();
 
+process.env.WS_SECRET = WS_SECRET;
+
 if( !_.isUndefined(process.env.WS_SECRET) && !_.isNull(process.env.WS_SECRET) )
 {
 	if( process.env.WS_SECRET.indexOf('|') > 0 )
