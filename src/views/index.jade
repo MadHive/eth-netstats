@@ -8,7 +8,7 @@ block content
 
   div.container-fluid(ng-controller='StatsCtrl')
     div.row(ng-cloak)
-      div.col-xs-4.stat-holder
+      div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder
         div.big-info.bestblock.text-info
           div.pull-left.icon-full-width
             i.icon-block
@@ -25,7 +25,7 @@ block content
       //-         span.small (current / last 50)
       //-       span.big-details {{ bestStats.block.uncles.length }}/{{ uncleCount }}
       //-     div.clearfix
-      div.col-xs-4.stat-holder
+      div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder
         div.big-info.blocktime(class="{{ lastBlock | timeClass : true }}")
           div.pull-left.icon-full-width
             i.icon-time
@@ -34,7 +34,7 @@ block content
             span.big-details {{ lastBlock | blockTimeFilter }}
             //- span.big-details(time-ago="lastBlock")
           div.clearfix
-      div.col-xs-4.stat-holder
+      div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder
         div.big-info.avgblocktime(class="{{ avgBlockTime | avgTimeClass }}")
           div.pull-left.icon-full-width
             i.icon-gas
@@ -95,7 +95,7 @@ block content
         div.row
           div.col-xs-12
             div.row
-              div.col-xs-4.stat-holder
+              div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder
                 div.big-info.chart(class="{{ avgBlockTime | avgTimeClass }}")
                   //- i.icon-time
                   span.small-title block time
@@ -109,14 +109,14 @@ block content
               //-     span.small-value {{ lastDifficulty | number }}
               //-     sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
 
-              div.col-xs-4.stat-holder.xpull-right
+              div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder.xpull-right
                 div.big-info.chart.xdouble-chart(class="{{ blockPropagationAvg | propagationAvgTimeClass : true }}")
                   //- i.icon-gas
                   span.small-title block propagation
                   //- span.small-value {{ blockPropagationAvg | blockPropagationFilter : '' }}
                   histogram.big-details.d3-blockpropagation(data="blockPropagationChart")
 
-              div.col-xs-4.stat-holder.xpull-right
+              div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder.xpull-right
                 div.big-info.chart.xdouble-chart
                   span.small-title last blocks miners
                   div.blocks-holder(ng-repeat='miner in miners track by miner.miner', data-toggle="tooltip", data-placement="right", data-original-title="{{miner.blocks}}")
@@ -127,19 +127,19 @@ block content
                     div.clearfix
 
             div.row
-              div.col-xs-4.stat-holder
+              div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder
                 div.big-info.chart.text-info
                   //- i.icon-uncle
                   span.small-title transactions
                   sparkchart.big-details.spark-transactions(data="{{transactionDensity.join(',')}}")
 
-              div.col-xs-4.stat-holder
+              div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder
                 div.big-info.chart.text-info
                   //- i.icon-gasprice
                   span.small-title gas spending
                   sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
 
-              div.col-xs-4.stat-holder
+              div.col-lg-4.col-md-4.col-sm-4.col-xs-12.stat-holder
                 div.big-info.chart.text-info
                   //- i.icon-uncle
                   span.small-title uncle count&nbsp;
@@ -178,7 +178,7 @@ block content
 
       //- div.clearfix
 
-    div.row(ng-cloak, style="padding-top: 10px")
+    div.row.stats-table(ng-cloak, style="padding-top: 10px;")
       table.table.table-striped
         thead
           tr.text-info

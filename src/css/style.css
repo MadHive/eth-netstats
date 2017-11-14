@@ -514,3 +514,11 @@ h3 {
 		 url('../fonts/ff-mark-medium.ttf') format('truetype'),
 		 url('../fonts/ff-mark-medium.svg#ff-mark-medium') format('svg');
   }
+
+  /* PHONE!!! */
+@media only screen and (max-device-width: 812px) { 
+	.stats-table {
+		width: 320px; 
+		overflow: scroll;
+	}
+}	
